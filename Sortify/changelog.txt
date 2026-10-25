@@ -1,0 +1,11 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2026-10-25
+  Bugfixes:
+    - Fixed slot filters not sticking in wagons and vehicle trunks. Filtered slots are now left alone, and everything else is sorted around them.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2026-10-25
+  Features:
+    - Initial release. Keeps chests sorted and stacks merged while their window is open.
+    - Per-player settings for cargo wagons, car/tank/spidertron trunks, and Space Age hubs and landing pads.

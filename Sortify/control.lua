@@ -32,6 +32,109 @@ local function get_sortable_inventory(entity, settings)
   return nil
 end
 
+-- Builds the value we sort items by: the same group/subgroup/item order the game
+-- uses in its menus, then name and quality. The slot number goes last so items
+-- that are otherwise equal keep their current order and don't shuffle around.
+local function get_sort_key(stack, slot)
+  local proto = stack.prototype
+  return {
+    proto.group.order,
+    proto.subgroup.order,
+    proto.order,
+    stack.name,
+    stack.quality.level,
+    slot,
+  }
+end
+
+-- True if key a should come before key b. Compares one part at a time.
+local function comes_before(a, b)
+  for i = 1, #a do
+    if a[i] ~= b[i] then
+      return a[i] < b[i]
+    end
+  end
+  return false
+end
+
+-- Combines partial stacks of the same item (and quality) in the given slots.
+local function merge_stacks(inventory, slots)
+  -- Remembers, for each item, a slot that still has room for more.
+  local slot_with_room = {}
+
+  for _, i in ipairs(slots) do
+    local stack = inventory[i]
+    if stack.valid_for_read then
+      local id = stack.name .. "/" .. stack.quality.name
+      local target_index = slot_with_room[id]
+
+      if target_index then
+        local target = inventory[target_index]
+        target.transfer_stack(stack)
+        if target.count >= target.prototype.stack_size then
+          slot_with_room[id] = nil
+        end
+      end
+
+      -- Whatever is left here can take the next matching stack.
+      if stack.valid_for_read and stack.count < stack.prototype.stack_size and not slot_with_room[id] then
+        slot_with_room[id] = i
+      end
+    end
+  end
+end
+
+-- Sorts an inventory that has slot filters, like vanilla would treat it:
+-- filtered slots are never touched, everything else gets merged and sorted.
+local function sort_around_filters(inventory)
+  -- Find every slot without a filter. These are the only ones we rearrange.
+  local free_slots = {}
+  for i = 1, #inventory do
+    if not inventory.get_filter(i) then
+      table.insert(free_slots, i)
+    end
+  end
+
+  merge_stacks(inventory, free_slots)
+
+  -- List the items in the free slots and put them in sorted order.
+  local items = {}
+  for _, i in ipairs(free_slots) do
+    local stack = inventory[i]
+    if stack.valid_for_read then
+      table.insert(items, { key = get_sort_key(stack, i), slot = i })
+    end
+  end
+  table.sort(items, function(a, b) return comes_before(a.key, b.key) end)
+
+  -- Move item number n into the nth free slot. We swap stacks instead of
+  -- removing and re-adding them, so nothing about the item is lost
+  -- (equipment grids, damage, blueprint contents, and so on).
+  local slot_of_item = {} -- item number -> slot it's in right now
+  local item_in_slot = {} -- slot -> item number sitting in it
+  for n, item in ipairs(items) do
+    slot_of_item[n] = item.slot
+    item_in_slot[item.slot] = n
+  end
+
+  for n = 1, #items do
+    local target = free_slots[n]
+    local current = slot_of_item[n]
+    if current ~= target then
+      inventory[target].swap_stack(inventory[current])
+
+      -- Whatever was in the target slot (maybe nothing) is now in "current".
+      local displaced = item_in_slot[target]
+      if displaced then
+        slot_of_item[displaced] = current
+      end
+      item_in_slot[current] = displaced
+      item_in_slot[target] = n
+      slot_of_item[n] = target
+    end
+  end
+end
+
 -- How often to re-sort an open chest. 60 ticks = 1 second, so 10 is 6 times a second.
 local SORT_INTERVAL_TICKS = 10
 
@@ -54,8 +157,16 @@ local function tidy_open_entity(player)
   end
 
   local inventory = get_sortable_inventory(entity, settings)
-  if inventory then
-    -- Merges partial stacks and sorts items into the game's standard order.
+  if not inventory then
+    return
+  end
+
+  if inventory.is_filtered() then
+    -- Has slot filters, so sort around them and leave filtered slots alone.
+    sort_around_filters(inventory)
+  else
+    -- No filters, so the game's built-in sort is fastest.
+    -- It merges partial stacks and sorts items into the standard order.
     inventory.sort_and_merge()
   end
 end
