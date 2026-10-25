@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2026-10-25
+  Features:
+    - Added per-player settings to include each kind of logistic chest (active provider, passive provider, storage, buffer, requester). All are off by default, so items only go into regular chests unless you opt in.
+  Bugfixes:
+    - Chests with a slot limit (the red X lock) are respected. Items only go into unlocked slots, and fully locked chests are skipped.
+    - Chests marked for deconstruction are no longer stashed into.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2026-10-25
   Bugfixes:
