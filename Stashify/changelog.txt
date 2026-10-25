@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2026-10-25
+  Bugfixes:
+    - Locked (filtered) inventory slots are no longer stashed.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2026-10-25
+  Features:
+    - Initial release.
+    - Press Ctrl + Shift + Q to move inventory items into nearby chests that already hold the same item and quality.
+    - Per-player range setting from 10 to 50 tiles.

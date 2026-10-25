@@ -1,0 +1,9 @@
+{
+  "name": "Stashify",
+  "version": "0.1.1",
+  "title": "Stashify",
+  "author": "WasianRicecracker",
+  "factorio_version": "2.1",
+  "description": "Press a key to move items from your inventory into nearby chests that already contain the same item.",
+  "dependencies": ["base >= 2.1.0"]
+}
