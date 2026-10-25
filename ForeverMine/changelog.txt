@@ -1,0 +1,9 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2026-10-24
+  Features:
+    - Every ore patch and fluid field can be made infinite.
+    - Infinite on/off checkbox for each resource (Settings > Mod settings > Startup). Needs a restart to change.
+    - Yield % for each resource, 1 to 500 (Settings > Mod settings > Map). Can be changed while playing. 100 = vanilla speed for ores, and each field's own starting yield for fluids.
+    - Vanilla and Space Age resources have their own settings. Ores from other mods share the "Other ores" settings.
+    - Not compatible with other infinite resource mods.

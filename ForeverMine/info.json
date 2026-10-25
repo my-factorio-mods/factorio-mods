@@ -1,0 +1,12 @@
+{
+  "name": "ForeverMine",
+  "version": "1.0.0",
+  "title": "ForeverMine",
+  "author": "WasianRicecracker",
+  "factorio_version": "2.1",
+  "dependencies": [
+    "base >= 2.1.0",
+    "? space-age"
+  ],
+  "description": "Every ore patch and fluid field can be infinite. Turn infinite on or off per resource and set its yield % (100 = vanilla speed). Not compatible with other infinite resource mods. Thumbnail image is AI-generated."
+}
