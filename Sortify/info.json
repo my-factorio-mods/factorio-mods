@@ -1,0 +1,9 @@
+{
+  "name": "Sortify",
+  "version": "0.1.0",
+  "title": "Sortify",
+  "author": "WasianRicecracker",
+  "factorio_version": "2.1",
+  "description": "Keeps chests sorted and stacks merged while you have them open. Each player can turn it on or off, and choose whether cargo wagons, vehicle trunks, space platform hubs, and cargo landing pads get sorted too.",
+  "dependencies": ["base >= 2.1"]
+}
