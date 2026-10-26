@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2026-10-26
+  Features:
+    - Initial release.
+    - Automatically uses defender, distractor, and destroyer capsules from your inventory to keep your following robots topped up.
+    - Separate per-player cap for each robot type, from 0 to 1000. 0 means that capsule is never used. Your research limit still applies.
+    - Optionally only deploys when an enemy is within 10 to 50 tiles.
+    - Never uses a capsule if its robots wouldn't all fit under the cap.
+    - Works while driving. Press Ctrl + Shift + G to turn it on or off.
