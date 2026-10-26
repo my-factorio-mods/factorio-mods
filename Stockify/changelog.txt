@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2026-10-25
+  Features:
+    - Can take from cargo landing pads, vehicle trunks (car, tank, spidertron), and cargo wagons, each with its own setting.
+    - One setting per logistic chest type. Active provider, passive provider, and storage are on by default.
+    - Supports quality filters like "uncommon or better".
+    - With a car, tank, or spidertron window open, the hotkey refills that vehicle's locked trunk slots instead of yours.
+  Changes:
+    - Locked slots in vehicles and cargo wagons are treated as reserved and never taken from.
+    - Does nothing while other windows (chests, machines, etc.) are open, so it never changes your inventory unexpectedly.
+    - Shows a message when used without a character (remote view or a space platform) instead of doing nothing.
+  Optimizations:
+    - Skips chests that don't have the item instead of scanning every slot.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 2026-10-25
   Features:
