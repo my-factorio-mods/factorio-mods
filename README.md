@@ -10,6 +10,7 @@ My mods for Factorio 2.1. All of them are available on the Factorio Mod Portal.
 | Sortify | Auto-sorts a chest while its window is open, with per-player settings | [Link](https://mods.factorio.com/mod/Sortify) | [Sortify/](Sortify/) |
 | Stashify | Press a key to send inventory items into nearby chests that already hold the same item | [Link](https://mods.factorio.com/mod/Stashify) | [Stashify/](Stashify/) |
 | Stockify | Press a key to refill your locked inventory slots from nearby chests | [Link](https://mods.factorio.com/mod/Stockify) | [Stockify/](Stockify/) |
+| Squadify | Automatically deploys combat robot capsules, with separate caps for each robot type | [Link](https://mods.factorio.com/mod/Squadify) | [Squadify/](Squadify/) |
 
 ## Installing
 The easiest way is through the in-game Mods menu: search for the mod name and click Install.
