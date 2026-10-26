@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2026-10-25
+  Features:
+    - Initial release.
+    - Press Ctrl + Shift + R to fill locked (filtered) inventory slots with matching items from nearby chests.
+    - Takes from the nearest chests first and matches item quality.
+    - Never takes from requester or buffer chests.
+    - Lists any items it couldn't fully restock in chat, with how many were missing.
+    - Per-player range setting from 10 to 50 tiles.

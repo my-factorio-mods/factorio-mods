@@ -1,0 +1,9 @@
+{
+  "name": "Stockify",
+  "version": "0.1.0",
+  "title": "Stockify",
+  "author": "WasianRicecracker",
+  "factorio_version": "2.1",
+  "description": "Press a key to refill your locked inventory slots from nearby chests.",
+  "dependencies": ["base >= 2.1.0"]
+}
