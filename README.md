@@ -11,6 +11,8 @@ My mods for Factorio 2.1. All of them are available on the Factorio Mod Portal.
 | Stashify | Press a key to send inventory items into nearby chests that already hold the same item | [Link](https://mods.factorio.com/mod/Stashify) | [Stashify/](Stashify/) |
 | Stockify | Press a key to refill your locked inventory slots from nearby chests | [Link](https://mods.factorio.com/mod/Stockify) | [Stockify/](Stockify/) |
 | Squadify | Automatically deploys combat robot capsules, with separate caps for each robot type | [Link](https://mods.factorio.com/mod/Squadify) | [Squadify/](Squadify/) |
+| Lumify | Animated RGB light shows for groups of lamps, with 18 patterns and custom colors | [Link](https://mods.factorio.com/mod/Lumify) | [Lumify/](Lumify/) |
+| Citify | Power poles softly light their supply area like streetlights, and go dark when the power does | [Link](https://mods.factorio.com/mod/Citify) | [Citify/](Citify/) |
 
 ## Installing
 The easiest way is through the in-game Mods menu: search for the mod name and click Install.
