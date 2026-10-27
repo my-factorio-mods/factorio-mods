@@ -1,0 +1,9 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2026-10-27
+  Features:
+    - Initial release.
+    - Power poles softly light their supply area, ending at the edge of the range.
+    - Light size follows each pole's own supply area, including quality and modded poles.
+    - Pole lights go dark when their power network has no power.
+    - Map settings for brightness, light color, powered-only, and glow size.

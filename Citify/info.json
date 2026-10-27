@@ -1,0 +1,9 @@
+{
+  "name": "Citify",
+  "version": "0.1.0",
+  "title": "Citify",
+  "author": "WasianRicecracker",
+  "factorio_version": "2.1",
+  "description": "Turns power poles into streetlights. Each pole softly lights its own supply area, grows with quality, and goes dark when its power does.",
+  "dependencies": ["base >= 2.1.0"]
+}
