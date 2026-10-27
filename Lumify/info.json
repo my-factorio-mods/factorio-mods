@@ -1,0 +1,9 @@
+{
+  "name": "Lumify",
+  "version": "0.1.0",
+  "title": "Lumify",
+  "author": "WasianRicecracker",
+  "factorio_version": "2.1",
+  "description": "Animated RGB light shows for your lamps. Group lamps together and give each group its own pattern, speed, and colors.",
+  "dependencies": ["base >= 2.1.0"]
+}

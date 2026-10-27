@@ -1,0 +1,11 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2026-10-27
+  Features:
+    - Initial release.
+    - Group lamps with a selection tool and give each group its own light show.
+    - 18 patterns: Rainbow, Wave, Twinkle, Breathe, Rainfall, Ripple, Spiral, Checkerboard, Fireworks, Game of Life, Fire, Aurora, Ocean, Code rain, Chase, Heartbeat, Sparkle, and Strobe.
+    - Per-group speed, wave direction, and rainbow or custom colors (up to 3).
+    - Lamps in a show stay on day and night.
+    - Lamps controlled by circuit color signals are skipped.
+    - Map setting to limit how many lamps are updated per tick.
